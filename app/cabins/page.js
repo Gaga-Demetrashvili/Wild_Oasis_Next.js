@@ -1,15 +1,18 @@
 import CabinList from "@/app/_components/CabinList";
 import { Suspense } from "react";
 import Spinner from "@/app/_components/Spinner";
+import Filter from "../_components/Filter";
 
-export const revalidate = 3600;
+// When using searchParams page will always be dynamically rendered. So revalidate is no longer needed. It's only relevant for statically rendered pages.
+//export const revalidate = 3600;
 //export const revalidate = 15;
 
 export const metadata = {
     title: "Cabins"
 }
 
-export default function Page() {
+export default function Page({ searchParams }) {
+    const filter = searchParams?.capacity ?? "all";
 
     return (
         <div>
@@ -25,9 +28,13 @@ export default function Page() {
                 to paradise.
             </p>
 
-            <Suspense fallback={<Spinner />}>
-                <CabinList />
+            <div className="flex justify-end mb-8">
+                <Filter />
+            </div>
+
+            <Suspense fallback={<Spinner />} key={filter}>
+                <CabinList filter={filter} />
             </Suspense>
-        </div>
+        </div >
     );
 }

@@ -31,9 +31,22 @@
 }
 
 /* For data picker */
-.rdp {
+.rdp-root {
   --rdp-cell-size: 32px !important;
   --rdp-accent-color: theme("colors.accent.500") !important;
   --rdp-background-color: theme("colors.accent.600") !important;
   margin: 0 !important;
 }
+
+.rdp-months {
+  flex-wrap: nowrap !important;
+}
+
+.rdp-month_caption {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .rdp-day_button:hover {
+  background-color: theme("colors.accent.600");
+} */

@@ -33,7 +33,7 @@
 /* For data picker */
 .rdp-root {
   --rdp-cell-size: 32px !important;
-  --rdp-accent-color: theme("colors.accent.500") !important;
+  --rdp-accent-color: theme("colors.accent.600") !important;
   --rdp-background-color: theme("colors.accent.600") !important;
   margin: 0 !important;
 }
@@ -47,6 +47,26 @@
   transform: translateX(-50%);
 }
 
-/* .rdp-day_button:hover {
+.rdp-range_start {
+  background: linear-gradient(
+    90deg,
+    transparent 50%,
+    theme("colors.accent.600") 50%
+  ) !important;
+}
+
+.rdp-range_middle {
+  background-color: theme("colors.accent.600") !important;
+}
+
+.rdp-range_end {
+  background: linear-gradient(
+    90deg,
+    theme("colors.accent.600") 50%,
+    transparent 50%
+  ) !important;
+}
+
+.rdp-day_button:hover {
   background-color: theme("colors.accent.600");
-} */
+}
